@@ -17,4 +17,9 @@ jobs:
       uses: TheDoctor0/zip-release@0.7.1
       with:
         filename: uvg266
-        path: ./uvg266/build/uvg266
+        path: ./Users/runner/work/uvg266macbuild/uvg266macbuild/uvg266/build
+    - name: Upload a Build Artifact of uvg266
+      uses: actions/upload-artifact@v4.0.0
+      with:
+        name: uvg266
+        path: ./uvg266.zip
