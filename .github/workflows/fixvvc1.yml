@@ -11,9 +11,9 @@ jobs:
     - uses: actions/checkout@v3
     - name: Git clone uvg266
       run: git clone --depth=1 https://github.com/ultravideo/uvg266
-    - name: Build vvenc
-      run: cd vvenc && mkdir build && cd build && cmake -DBUILD_SHARED_LIBS=OFF -DBUILD_TESTS=OFF .. -G "Xcode" && cmake --build . --config Release && cd ../../
-    - name: Zip Release of vvenc
+    - name: Build uvg266
+      run: cd uvg266 && mkdir build && cd build && cmake -DBUILD_SHARED_LIBS=OFF -DBUILD_TESTS=OFF .. -G "Xcode" && cmake --build . --config Release && cd ../../
+    - name: Zip Release of uvg266
       uses: TheDoctor0/zip-release@0.7.1
       with:
         filename: uvg266_x64.zip
