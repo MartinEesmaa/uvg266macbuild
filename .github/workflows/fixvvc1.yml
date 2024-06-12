@@ -1,0 +1,20 @@
+name: Build uvg266 x86_64/amd64 Intel CPU Progress Process Build
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Git clone uvg266
+      run: git clone --depth=1 https://github.com/ultravideo/uvg266
+    - name: Build vvenc
+      run: cd vvenc && mkdir build && cd build && cmake -DBUILD_SHARED_LIBS=OFF -DBUILD_TESTS=OFF .. -G "Xcode" && cmake --build . --config Release && cd ../../
+    - name: Zip Release of vvenc
+      uses: TheDoctor0/zip-release@0.7.1
+      with:
+        filename: uvg266_x64.zip
+        path: ./uvg266/build/uvg266
