@@ -16,5 +16,5 @@ jobs:
     - name: Zip Release of uvg266
       uses: TheDoctor0/zip-release@0.7.1
       with:
-        filename: uvg266_x64.zip
+        filename: uvg266
         path: ./uvg266/build/uvg266
