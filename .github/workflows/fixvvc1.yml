@@ -1,4 +1,4 @@
-name: Build uvg266 x86_64/amd64 Intel CPU Progress Process Build
+name: Build uvg266 x86_64/amd64 Intel CPU Progress Process Build macOS
 on:
   push:
     branches: [ main ]
@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-12
     steps:
     - uses: actions/checkout@v3
     - name: Git clone uvg266
